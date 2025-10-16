@@ -42,3 +42,5 @@ function d_none() {
 }
 
 //d_none()
+
+const disappear = setTimeout(d_none, 30000)
