@@ -60,29 +60,30 @@ setTimeout(dis_appear, 3000);
 const user_numbs = [];
 
 submit.addEventListener('click', () => {
-  // Svuota l’array prima di riempirlo di nuovo
-  user_numbs.length = 0;
+    // Svuota l’array prima di riempirlo di nuovo
+    user_numbs.length = 0;
 
-  user_numbs.push(
-    Number(document.getElementById('user-n1').value),
-    Number(document.getElementById('user-n2').value),
-    Number(document.getElementById('user-n3').value),
-    Number(document.getElementById('user-n4').value),
-    Number(document.getElementById('user-n5').value)
-  );
+    user_numbs.push(
+        Number(document.getElementById('user-n1').value),
+        Number(document.getElementById('user-n2').value),
+        Number(document.getElementById('user-n3').value),
+        Number(document.getElementById('user-n4').value),
+        Number(document.getElementById('user-n5').value)
+    );
 
-  console.log("Numeri utente:", user_numbs);
+    console.log("Numeri utente:", user_numbs);
+
+    let numeriIndovinati = 0
+
+    for (let i = 0; i < numeriCasuali.length; i++) {
+        const thisNum = numeriCasuali[i]
+        if (user_numbs.includes(thisNum)) {
+            numeriIndovinati++
+
+        }
+
+    }
+    console.log(numeriIndovinati);
 });
 
-let numeriIndovinati = 0
-
-for (let i = 0; i < numeriCasuali.length; i++) {
-    const thisNum = numeriCasuali[i]
-    if(user_numbs.includes(thisNum)) {
-        numeriIndovinati++
-    }
-
-}
-
-console.log(numeriIndovinati);
 
