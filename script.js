@@ -36,3 +36,9 @@ console.log(numeriCasuali);
 const numbers = document.getElementById('numbers')
 
 numbers.textContent = numeriCasuali.join(' ')
+
+function d_none() {
+    numbers.style.display = 'none'
+}
+
+//d_none()
