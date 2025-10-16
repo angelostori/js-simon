@@ -57,14 +57,19 @@ function dis_appear() {
 }
 setTimeout(dis_appear, 3000);
 
-// Al click del bottone
+const user_numbs = [];
+
 submit.addEventListener('click', () => {
-    const user_numbs = [
-        Number(document.getElementById('user-n1').value),
-        Number(document.getElementById('user-n2').value),
-        Number(document.getElementById('user-n3').value),
-        Number(document.getElementById('user-n4').value),
-        Number(document.getElementById('user-n5').value)
-    ];
-    console.log("Numeri utente:", user_numbs)
-})
+  // Svuota l’array prima di riempirlo di nuovo
+  user_numbs.length = 0;
+
+  user_numbs.push(
+    Number(document.getElementById('user-n1').value),
+    Number(document.getElementById('user-n2').value),
+    Number(document.getElementById('user-n3').value),
+    Number(document.getElementById('user-n4').value),
+    Number(document.getElementById('user-n5').value)
+  );
+
+  console.log("Numeri utente:", user_numbs);
+});
