@@ -74,7 +74,7 @@ submit.addEventListener('click', () => {
     console.log("Numeri utente:", user_numbs);
 
     let numeriIndovinati = 0
-
+    // Verifico se i numeri inseriti dall'utente siano presenti tra quelli casuali 
     for (let i = 0; i < numeriCasuali.length; i++) {
         const thisNum = numeriCasuali[i]
         if (user_numbs.includes(thisNum)) {
@@ -84,6 +84,9 @@ submit.addEventListener('click', () => {
 
     }
     console.log(numeriIndovinati);
+    result.textContent = `Hai indovinato ${numeriIndovinati} numeri.`
+     numbers.style.display = 'block';
 });
+
 
 
