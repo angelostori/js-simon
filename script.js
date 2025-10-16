@@ -21,38 +21,50 @@ Dividete in piccoli problemi la consegna.
 Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci 
 sono in comune tra i due array"
-*/ 
+*/
 
 //Visualizzare in pagina 5 numeri casuali
 
-const numeriCasuali = []
+const numeriCasuali = [];
 
+// Genera 5 numeri casuali da 1 a 100
 for (let i = 0; i < 5; i++) {
-    numeroCasuale = Math.floor((Math.random() * 100) + 1);
-    numeriCasuali.push(numeroCasuale)
+    const numeroCasuale = Math.floor(Math.random() * 100) + 1;
+    numeriCasuali.push(numeroCasuale);
 }
-console.log(numeriCasuali);
+console.log("Numeri da ricordare:", numeriCasuali);
 
-const numbers = document.getElementById('numbers')
+// Mostra i numeri
+const numbers = document.getElementById('numbers');
+const input = document.getElementById('input');
+const submit = document.getElementById('submit');
+const result = document.getElementById('result');
 
-numbers.textContent = numeriCasuali.join(' ')
+numbers.textContent = numeriCasuali.join(' ');
 
-function dis_appear() {
-    numbers.style.display = 'none'
-    input.style.display = 'block'
-    submit.style.display = 'block'
-}
-
-//d_none()
-
-const disappear = setTimeout(dis_appear, 30000)
-
-const input = document.getElementById('input')
-const submit = document.getElementById('submit')
-
+// Nasconde gli input e il bottone all'inizio
 function d_none_element(obj) {
-    obj.style.display = 'none'
+    obj.style.display = 'none';
 }
+d_none_element(input);
+d_none_element(submit);
 
-d_none_element(input)
-d_none_element(submit)
+// Dopo 3 secondi nasconde i numeri e mostra gli input
+function dis_appear() {
+    numbers.style.display = 'none';
+    input.style.display = 'block';
+    submit.style.display = 'block';
+}
+setTimeout(dis_appear, 3000);
+
+// Al click del bottone
+submit.addEventListener('click', () => {
+    const user_numbs = [
+        Number(document.getElementById('user-n1').value),
+        Number(document.getElementById('user-n2').value),
+        Number(document.getElementById('user-n3').value),
+        Number(document.getElementById('user-n4').value),
+        Number(document.getElementById('user-n5').value)
+    ];
+    console.log("Numeri utente:", user_numbs)
+})
