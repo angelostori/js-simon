@@ -55,7 +55,7 @@ function dis_appear() {
     input.style.display = 'block';
     submit.style.display = 'block';
 }
-setTimeout(dis_appear, 3000);
+setTimeout(dis_appear, 30000);
 
 const user_numbs = [];
 
