@@ -32,3 +32,7 @@ for (let i = 0; i < 5; i++) {
     numeriCasuali.push(numeroCasuale)
 }
 console.log(numeriCasuali);
+
+const numbers = document.getElementById('numbers')
+
+numbers.textContent = numeriCasuali.join(' ')
