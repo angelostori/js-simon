@@ -73,3 +73,18 @@ submit.addEventListener('click', () => {
 
   console.log("Numeri utente:", user_numbs);
 });
+
+let numeriIndovinati = 0
+
+for (let i = 0; i < numeriCasuali.length; i++) {
+    const elementI = numeriCasuali[i];
+    for (let x = 0; x < user_numbs.length; x++) {
+        const elementX = user_numbs[x];
+        if (elementI === elementX) {
+            numeriIndovinati++
+        }
+    }
+}
+
+console.log(numeriIndovinati);
+
