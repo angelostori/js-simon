@@ -77,13 +77,11 @@ submit.addEventListener('click', () => {
 let numeriIndovinati = 0
 
 for (let i = 0; i < numeriCasuali.length; i++) {
-    const elementI = numeriCasuali[i];
-    for (let x = 0; x < user_numbs.length; x++) {
-        const elementX = user_numbs[x];
-        if (elementI === elementX) {
-            numeriIndovinati++
-        }
+    const thisNum = numeriCasuali[i]
+    if(user_numbs.includes(thisNum)) {
+        numeriIndovinati++
     }
+
 }
 
 console.log(numeriIndovinati);
