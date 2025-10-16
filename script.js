@@ -37,10 +37,22 @@ const numbers = document.getElementById('numbers')
 
 numbers.textContent = numeriCasuali.join(' ')
 
-function d_none() {
+function dis_appear() {
     numbers.style.display = 'none'
+    input.style.display = 'block'
+    submit.style.display = 'block'
 }
 
 //d_none()
 
-const disappear = setTimeout(d_none, 30000)
+const disappear = setTimeout(dis_appear, 30000)
+
+const input = document.getElementById('input')
+const submit = document.getElementById('submit')
+
+function d_none_element(obj) {
+    obj.style.display = 'none'
+}
+
+d_none_element(input)
+d_none_element(submit)
